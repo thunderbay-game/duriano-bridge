@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<title>Duriano redirect</title>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16974663455"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  /* ส่งคอนเวอร์ชันระบุช่องทาง */
+  gtag('event','yt_click', {
+      'send_to':'AW-16974663455',
+      'event_callback':function(){
+          /* ส่งต่อไป Steam หลังยิง GA แล้ว */
+          window.location.replace(
+            'https://store.steampowered.com/app/3048930/Duriano/' +
+            window.location.search   /* เก็บ UTM ทั้งหมด */
+          );
+      }
+  });
+  /* สำรอง: ถ้ายิง GA ไม่ทัน 700 ms ให้รีไดเร็กต์อยู่ดี */
+  setTimeout(function(){
+      window.location.replace(
+        'https://store.steampowered.com/app/3048930/Duriano/' +
+        window.location.search
+      );
+  },700);
+</script>
+
+<style>body{display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif}</style>
+</head>
+<body>
+Loading Duriano on Steam…
+</body></html>
